@@ -18,7 +18,7 @@ describe('Array Extension', function() {
     it('should not modify the current array', function() {
         const array = [1, 0 ,0 ,1, 1];
 
-        const arrayOfOnes = array.where((value) => value);
+        const arrayOfOnes = array.where(value => value);
 
         expect(array).to.be.an('array').that.includes.members([1,0]);
     });
