@@ -11,6 +11,6 @@ Array.prototype.each = function call(callback) {
         throw new TypeError(`Type error: ${callback} is not a function.`);
     }
     for (let arrValue of this) {
-        callback.call(this, arrValue)
+        callback.call(this, arrValue);
     }
 }
