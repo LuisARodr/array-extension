@@ -14,6 +14,7 @@ describe('Array Extension', function() {
 
       expect(concatArray).to.be.equal("12345");
     });
+    
     it('should add the values of the array when the array values are numbers and the function adds them', function() {
       const array = [1, 1, 2, 2, 4];
       let sum = 0;
@@ -22,6 +23,7 @@ describe('Array Extension', function() {
 
       expect(sum).to.be.equal(10);
     });
+
     it('should execute the function the same number of times as the length of the array', function() {
       const array = new Array(21);
       let count = 0;
@@ -30,15 +32,17 @@ describe('Array Extension', function() {
 
       expect(count).to.be.equal(21);
     });
+
     it('should pass the current index with each function call', function() {
       const array1 = [1,2,3,4,5];
       const array2 = [1,2,3,4,5];
       const isSameArrayValue = [];
 
-      array1.each((value, index) => isSameArrayValue.push( value == array2[index]) );
+      array1.each((value, index) => isSameArrayValue.push(value == array2[index]));
 
       expect(isSameArrayValue).to.not.include(false);
-    })
+    });
+
     it('should throw a Type error when the callback is not a function', function() {
       expect([].each.bind([], "Hello")).to.throw(`Type error: Hello is not a function.`);      
       expect([].each.bind([], {name: "John"})).to.throw(`Type error: [object Object] is not a function.`);    
