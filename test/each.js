@@ -14,7 +14,7 @@ describe('Array Extension', function() {
 
       expect(concatArray).to.be.equal("12345");
     });
-    
+
     it('should add the values of the array when the array values are numbers and the function adds them', function() {
       const array = [1, 1, 2, 2, 4];
       let sum = 0;
@@ -38,7 +38,7 @@ describe('Array Extension', function() {
       const array2 = [1,2,3,4,5];
       const isSameArrayValue = [];
 
-      array1.each((value, index) => isSameArrayValue.push(value == array2[index]));
+      array1.each((value, index) => isSameArrayValue.push(value === array2[index]));
 
       expect(isSameArrayValue).to.not.include(false);
     });
