@@ -7,7 +7,7 @@ var ArrayExtension = require('../Methods/ArrayExtension');
 describe('Array Extension', function() {
   describe('#each()', function() {
     it('should concatenate the values when each value is added to a empty sting', function() {
-      let array = [1, 2, 3, 4, 5];
+      const array = [1, 2, 3, 4, 5];
       let concatArray = '';
 
       array.each(value => concatArray += value);
@@ -15,7 +15,7 @@ describe('Array Extension', function() {
       expect(concatArray).to.be.equal("12345");
     });
     it('should add the values of the array when the array values are numbers and the function adds them', function() {
-      let array = [1, 1, 2, 2, 4];
+      const array = [1, 1, 2, 2, 4];
       let sum = 0;
 
       array.each(value => sum += value);
@@ -23,7 +23,7 @@ describe('Array Extension', function() {
       expect(sum).to.be.equal(10);
     });
     it('should execute the function the same number of times as the length of the array', function() {
-      let array = new Array(21);
+      const array = new Array(21);
       let count = 0;
 
       array.each(() => count += 1);
@@ -31,9 +31,9 @@ describe('Array Extension', function() {
       expect(count).to.be.equal(21);
     });
     it('should pass the current index with each function call', function() {
-      let array1 = [1,2,3,4,5];
-      let array2 = [1,2,3,4,5];
-      let isSameArrayValue = [];
+      const array1 = [1,2,3,4,5];
+      const array2 = [1,2,3,4,5];
+      const isSameArrayValue = [];
 
       array1.each((value, index) => isSameArrayValue.push( value == array2[index]) );
 
