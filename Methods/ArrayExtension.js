@@ -28,7 +28,7 @@ Array.prototype.where = function where(spec) {
         throw new TypeError(`Type error: ${spec} is not a function.`);
     }
 
-    let result = [];
+    const result = [];
 
     this.each(function evaluate(value, index) {
         if (spec.call(this, value, index)) {
