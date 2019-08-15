@@ -24,7 +24,6 @@ describe('Array Extension', function() {
     });
     it('should execute the function the same number of times as the length of the array', function() {
       let array = new Array(21);
-
       let count = 0;
 
       array.each(() => count += 1);
@@ -34,7 +33,6 @@ describe('Array Extension', function() {
     it('should pass the current index with each function call', function() {
       let array1 = [1,2,3,4,5];
       let array2 = [1,2,3,4,5];
-
       let isSameArrayValue = [];
 
       array1.each((value, index) => isSameArrayValue.push( value == array2[index]) );
