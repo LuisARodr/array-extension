@@ -64,7 +64,7 @@ Array.prototype.any = function any(spec) {
     let isInside = false;
 
     this.each(function evaluate(value) {
-        if(value === spec) {
+        if (value === spec) {
             isInside = true;
         }
     });
