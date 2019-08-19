@@ -33,3 +33,13 @@ WIP
     `spec` on its `function` form takes two params:
     - *value*: Is equal to the current value of the array
     - *index*: Is equal to the current index of the array
+
+- `select( spec )`
+
+  `select()` returns a new array with the values returned by the spec function for each value of the array.
+  `spec` takes two params:
+  - *value*: Is equal to the current value of the array
+  - *index*: Is equal to the current index of the array
+  
+  **Throws** `TypeError` when spec is not a function.
+  
