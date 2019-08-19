@@ -49,25 +49,20 @@ Array.prototype.where = function where(spec) {
  */
 Array.prototype.any = function any(spec) {
     if ((typeof spec) == 'function') {
-        let satisfiesFunction = false;
-        
-        this.each(function evaluate(value, index) {
-            if (spec.call(this, value, index)) {
-                satisfiesFunction = true;
+        for (let i = 0; i < this.length; i++) {
+            if (spec.call(this, this[i], i)) {
+                return true;
             }
-        });
-
-        return satisfiesFunction;
-    }
-    
-    
-    let isInside = false;
-
-    this.each(function evaluate(value) {
-        if (value === spec) {
-            isInside = true;
         }
-    });
 
-    return isInside;
+        return false;
+    }
+
+    for (let value of this) {
+        if (value === spec) {
+            return true;
+        }
+    }
+
+    return false;
 }
