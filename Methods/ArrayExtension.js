@@ -71,10 +71,10 @@ Array.prototype.any = function any(spec) {
 /**
  * Returns a new array with the values returned by the spec function for
  * each value of the array.
- * @param spec a function that is called for every value of the array,
- * the return value is added to the new array, this function takes two params:
- * the current value of the array and the index of the value.
- * @throws {TypeError} If spec is no a function.
+ * @param {spec} spec - This function is called for every value of the array,
+ * the return value is added to the new array.
+ * @returns {*[]} - A new array with the values returned by spec.
+ * @throws {TypeError} - If spec is no a function.
  */
 Array.prototype.select = function select(spec) {
     if ((typeof spec) != 'function') {
@@ -95,5 +95,5 @@ Array.prototype.select = function select(spec) {
  * @callback spec
  * @param {*} value - The current value of the array. 
  * @param {number} index - The index of the current value.
- * @returns {boolean} - true is the condition is correct, false otherwise.
+ * @returns {*} - The return value varies by usage.
  */
