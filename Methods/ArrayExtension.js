@@ -91,6 +91,43 @@ Array.prototype.select = function select(spec) {
 }
 
 /**
+ * Returns a new array with a maximun number of values equal to howMany, if
+ * spec is present then the resulting values need to satisfy the function to
+ * be added to the resulting array.
+ * @param {number} howMany - The maximun number of values on the resulting array.
+ * @param {spec} spec - This function is called for every value of the array, if 
+ * it returns true then the value can be added to the resulting array.
+ * @returns {*[]} - An array of maximun size equal to howMany and filtered by 
+ * spec if present.
+ * @throws {TypeError} - If spec is no a function.
+ */
+Array.prototype.take = function take(howMany, spec) {
+    const result = [];
+    let specArray = [];
+    if (spec) {
+        if ((typeof spec) != 'function') {
+            throw new TypeError(`Type error: ${spec} is not a function.`);
+        }
+
+        for (let i = 0; i < this.length; i++) {
+            if (spec.call(this, this[i], i)) {
+                specArray.push(this[i]);
+            }
+        }
+    } else {
+        specArray = this;
+    }
+
+    howMany = isNaN(howMany) ? 0 : howMany;
+
+    for (let i = 0; (i < specArray.length) && (i < howMany); i++) {
+        result.push(specArray[i]);
+    }
+    
+    return result;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
