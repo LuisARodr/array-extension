@@ -28,7 +28,7 @@ describe('Array Extension', function() {
 
       const takenArray = array.take(4);
 
-      expect(takenArray).to.be.an('array').that.includes.members([1, 2, 3, 4]);
+      expect(takenArray).to.be.an('array').that.includes.members([1, 2, 3, 4]).and.has.a.lengthOf(4);
     });
 
     it('should return only the first 3 pair numbers when the howMany param' +
