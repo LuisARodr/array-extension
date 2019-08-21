@@ -81,11 +81,11 @@ Array.prototype.select = function select(spec) {
         throw new TypeError(`Type error: ${spec} is not a function.`);
     }
 
-    const result = [];
+    const result = []; 
 
     this.each(function evaluate(value, index) {
-        result.push(spec.call(this, value, index))
-    })
+        result.push(spec.call(this, value, index));
+    });
 
     return result;
 }
