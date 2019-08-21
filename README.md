@@ -54,7 +54,7 @@ WIP
   
 - `take( howMany, spec )`
 
-  `take()`  Returns a new array with a maximun number of values equal to howMany, if
+  `take()` Returns a new array with a maximun number of values equal to howMany, if
    spec is present then the resulting values need to satisfy the function to
    be added to the resulting array.
    - `howMany` - A number that sets the maximun number of values on the resulting array.
@@ -66,3 +66,10 @@ WIP
 
    **Returns** - An array of maximun size equal to howMany and filtered by 
    spec if present.
+
+- `skip( howMany )` 
+
+  `skip()` Retuns a new array with the values of the array minus the first howMany values.
+  - `howMany` - The number of values of the array to be skiped in the new array.
+  
+  **Returns** - A new array with the values that didn't got skiped.
