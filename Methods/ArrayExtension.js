@@ -2,8 +2,7 @@
 
 /**
  * Executes a callback function for each value of the array.
- * @param callback A function to be executed for each value of the array.
- * Takes two params: the current value of the array and the index of the value.
+ * @param {spec} callback - A function to be executed for each value of the array.
  * @throws {TypeError} If the callback type is no a function
  */
 Array.prototype.each = function call(callback) {
