@@ -38,3 +38,42 @@ Array.prototype.where = function where(spec) {
 
     return result;
 }
+
+/**
+ * Returns true when the value of spec is on the array, if spec is a function
+ * then it evaluates every value in the array and returns true if spec returns
+ * true for any evaluation, otherwise it returns false.
+ * @param {spec|*} spec - Value to look for in the array, if spec is a function then it 
+ * evaluates every value on the array.
+ * @returns {boolean} - True if the value is found on the array or spec is evaluated
+ * as true, false otherwise.
+ */
+Array.prototype.any = function any(spec) {
+    if ((typeof spec) == 'function') {
+        for (let i = 0; i < this.length; i++) {
+            if (spec.call(this, this[i], i)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    for (let value of this) {
+        if (value === spec) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+
+/**
+ * A callback to evaluate every value of the array
+ * @callback spec
+ * @param {*} value - The current value of the array. 
+ * @param {number} index - The index of the current value.
+ * @returns {boolean} - true is the condition is correct, false otherwise.
+ */
