@@ -17,10 +17,11 @@ Array.prototype.each = function call(callback) {
 
 /**
  * Returns a new array from the elements of the array that satisfies the
- * spec function
- * @param spec A function that evaluates every value of the array, if spec
- * returns true then the value is added to the resulting array, it takes 
- * two params: the current value of the array and the index of the value.
+ * spec function.
+ * @param {spec} spec A function that evaluates every value of the array, if spec
+ * returns true then the value is added to the resulting array.
+ * @returns {*[]} - A new array from the elements of the array that satisfies the
+ * spec function.
  * @throws {TypeError} If spec is no a function.
  */
 Array.prototype.where = function where(spec) {
