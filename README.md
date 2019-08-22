@@ -101,3 +101,11 @@ WIP
   
   **Throws** `TypeError` when spec is not a function.
   
+- `index( spec )`
+
+  `index()` return the zero based position in the array of the element that satisfies spec.
+    - `spec` - The value to be matched on every value of the array on search of it, if spec is a fuction then a value is found when the function is satisfied with that value, otherwise it will look for a value on the array that is equal to spec. On its function form spec takes two params: 
+      - *value*: Is equal to the current value of the array.
+      - *index*: Is equal to the current index of the array. 
+  
+  **Returns** - The index of the match with spec or -1 if there's no match.
