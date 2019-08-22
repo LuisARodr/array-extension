@@ -256,7 +256,7 @@ Array.prototype.index = function(spec) {
 /**
  * Returns a new array with the values of the property for each value of the 
  * array.
- * @param {string|symbol} - name of the property that is going to be filling 
+ * @param {string|symbol} property -  name of the property that is going to be filling 
  * the array.
  * @returns {*[]} - An array with the values of the property, if a property is
  * found as undefined then is not added to the array.
