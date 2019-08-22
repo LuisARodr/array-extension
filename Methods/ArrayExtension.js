@@ -178,7 +178,7 @@ Array.prototype.first = function(spec) {
  * @throws {TypeError} - If spec is no a function.
  */
 Array.prototype.last = function(spec) {
-    if (!spec) {
+    if (spec === undefined) {
         return this[this.length - 1];
     }
     if ((typeof spec) != 'function') {
