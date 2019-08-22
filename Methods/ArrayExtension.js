@@ -153,7 +153,7 @@ Array.prototype.skip = function(howMany) {
  * @throws {TypeError} - If spec is no a function.
  */
 Array.prototype.first = function(spec) {
-    if (!spec) {
+    if (spec === undefined) {
         return this[0];
     }
     if ((typeof spec) != 'function') {
