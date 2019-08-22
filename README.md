@@ -91,3 +91,13 @@ WIP
   **Returns** - The last element to satisfy spec or null if there's no match.
   
   **Throws** `TypeError` when spec is not a function.
+  
+- `count( spec )`
+
+  `count()` Returns the number of elements on the collection that satifies spec, if spec is not present then it returns the length.
+  - `spec` - A function that evaluates every value of the array, if spec returns true then the value is counted towards the total.
+  
+  **Returns** - The count of values that satisfied the spec function or the length of the array if spec is not present.
+  
+  **Throws** `TypeError` when spec is not a function.
+  
