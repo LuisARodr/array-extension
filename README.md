@@ -69,7 +69,16 @@ WIP
 
 - `skip( howMany )` 
 
-  `skip()` Retuns a new array with the values of the array minus the first howMany values.
+  `skip()` Returns a new array with the values of the array minus the first howMany values.
   - `howMany` - The number of values of the array to be skiped in the new array.
   
   **Returns** - A new array with the values that didn't got skiped.
+  
+- `first( spec )`
+
+  `first()` Returns the first element on the collection that satisfies `spec`, if `spec` is not present then it returns the first value of the array. Returns a `null` value if the collection is empty or there's no element to match.
+  - `spec` - A function to evaluate every value of the array.
+  
+  **Returns** - The first element to satisfy spec or null if there's no match.
+  
+  **Throws** `TypeError` when spec is not a function.
