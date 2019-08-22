@@ -145,6 +145,31 @@ Array.prototype.skip = function(howMany) {
 }
 
 /**
+ * Returns the first element on collection that satifies spec, if spec is not
+ * present then it returns the first value of the array. Returns a null value
+ * if the collection is empty or there's no element to match.
+ * @param {spec} spec - A function to evaluate every value of the array.
+ * @returns {*} The first element to satisfy spec or null if there's no match.
+ * @throws {TypeError} - If spec is no a function.
+ */
+Array.prototype.first = function(spec) {
+    if (!spec) {
+        return this[0];
+    }
+    if ((typeof spec) != 'function') {
+        throw new TypeError(`Type error: ${spec} is not a function.`);
+    }
+    
+    for (let i = 0; i < this.length; i++) {
+        if (spec.call(this, this[i], i)) {
+            return this[i];
+        }
+    }
+    
+    return null;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
