@@ -109,3 +109,10 @@ WIP
       - *index*: Is equal to the current index of the array. 
   
   **Returns** - The index of the match with spec or -1 if there's no match.
+  
+- `pluck( property )`
+
+  `pluck()` Returns a new array with the values of the property for each value of the array.
+  - `property`- Name of the property that is going to be filling the array.
+  
+  **Returns** - An array with the values of the property, if a property is found as undefined then is not added to the array.
