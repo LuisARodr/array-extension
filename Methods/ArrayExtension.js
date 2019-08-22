@@ -225,6 +225,35 @@ Array.prototype.count = function(spec) {
 }
 
 /**
+ * Return the zero based position in the array of the element that satisfies
+ * spec.
+ * @param {spec|*} spec - The value to be matched on every value of the array 
+ * on search of it, if spec is a fuction then a value is found when the function
+ * is satisfied with that value, otherwise it will look for a value on the array
+ * that is equal to spec.
+ * @returns {number} - The index of the match with spec or -1 if there's no match.
+ */
+Array.prototype.index = function(spec) {
+    if ((typeof spec) == 'function') {
+        for (let i = 0; i < this.length; i++) {
+            if (spec.call(this, this[i] , i)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    for (let i = 0; i < this.length; i++) {
+        if (spec === this[i]) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
