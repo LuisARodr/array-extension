@@ -82,3 +82,12 @@ WIP
   **Returns** - The first element to satisfy spec or null if there's no match.
   
   **Throws** `TypeError` when spec is not a function.
+  
+- `last( spec )`
+
+  `last()` Returns the last element on the collection that satisfies `spec`, if `spec` is not present then it returns the last value of the array. Returns a `null` value if the collection is empty or there's no element to match.
+  - `spec` - A function to evaluate every value of the array.
+  
+  **Returns** - The last element to satisfy spec or null if there's no match.
+  
+  **Throws** `TypeError` when spec is not a function.
