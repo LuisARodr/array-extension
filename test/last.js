@@ -41,6 +41,6 @@ describe('Array Extension', function() {
     it('should throw a Type error when spec is not a function', function() {
         expect([].last.bind([], "Hello")).to.throw(`Type error: Hello is not a function.`);      
         expect([].last.bind([], {name: "John"})).to.throw(`Type error: [object Object] is not a function.`);    
-      });
+    });
   });
 });
