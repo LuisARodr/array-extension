@@ -277,10 +277,10 @@ Array.prototype.pluck = function(property) {
  * Returns the sum of the result of excecuting spec, if spec is not present,
  * it will return the summatory of the array.
  * @param {spec} spec - A function to be executed for every value of the array,
- * it's return value added is what forms the result.
+ * its return value added is what forms the result.
  * @returns {number|string} - The result of adding all the values returned by 
  * spec or null if the array is empty
- * @throws {TypeError} - If spec is no a function.
+ * @throws {TypeError} - If spec is not a function.
  */
 Array.prototype.sum = function(spec) {
     if ((spec !== undefined) && ((typeof spec) != 'function')) {
