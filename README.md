@@ -146,4 +146,6 @@ WIP
 
   **Throws** `TypeError` If spec is present and is not a function.
   
+- `flatten()` Returns new array with the values of the array, this new array is always flat so if the array contains another array it will take the values of the inner array and insert them on the outer array.
   
+  **Returns** - A flat representation of the array.
