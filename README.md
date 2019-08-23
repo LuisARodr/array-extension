@@ -125,3 +125,25 @@ WIP
   **Retuns** - The result of adding all the values returned by spec or the sum of every value of the array if spec is not present or null if the array is empty.
   
   **Throws** `TypeError` If spec is present and is not a function.
+  
+- `max( comparer )` returns the maximum value on the collection or null if the array is empty, if comparer is not present it will evaluate the elements as if they where numbers.
+
+  - `comparer` - A function used to make the comparations, this param not being present means the comparations will be made as if every value on the array where numbers. Returns negative when valueA < value B, zero when valueA === valueB or positive when valueA > valueB. It takes two params:  
+    - *valueA*: The first value to compare.
+    - *valueB*: The second value to compare.
+    
+  **Returns** - The maximum value on the array acording to the comparer.
+
+  **Throws** `TypeError` If spec is present and is not a function.
+  
+- `min( comparer )` returns the minumum value on the collection or null if the array is empty, if comparer is not present it will evaluate the elements as if they where numbers.
+
+  - `comparer` - A function used to make the comparations, this param not being present means the comparations will be made as if every value on the array where numbers. Returns negative when valueA < value B, zero when valueA === valueB or positive when valueA > valueB. It takes two params:  
+    - *valueA*: The first value to compare.
+    - *valueB*: The second value to compare.
+    
+  **Returns** - The minimum value on the array acording to the comparer.
+
+  **Throws** `TypeError` If spec is present and is not a function.
+  
+  
