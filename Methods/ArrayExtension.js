@@ -399,6 +399,27 @@ Array.prototype.min = function(comparer) {
 }
 
 /**
+ * Returns new array with the values of the array, this new array is always flat
+ * so if the array contains another array it will take the values of the inner
+ * array and insert them on the outer array.
+ * @returns {*[]} - A flat array.
+ */
+Array.prototype.flatten =  function flatten() {
+    const flattenArray = [];
+
+    for (let i = 0; i < this.length; i++) {
+        if (Array.isArray(this[i])) {
+            flattenArray.push(...this[i].flatten());
+            continue;
+        }
+
+        flattenArray.push(this[i]);
+    }
+
+    return flattenArray;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
