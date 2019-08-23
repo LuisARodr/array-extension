@@ -5,7 +5,7 @@ var ArrayExtension = require('../Methods/ArrayExtension');
 
 
 describe('Array Extension', function() {
-  describe('#index()', function() {
+  describe('#sum()', function() {
     it('should add all the values of the array when no spec is passed', function() {
       const array = [1, 2, 3, 4];
 
