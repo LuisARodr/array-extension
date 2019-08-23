@@ -313,9 +313,62 @@ Array.prototype.sum = function(spec) {
 }
 
 /**
+ * Returns the maximum value on the collection or null if the array is empty,
+ * if comparer is not present it will evaluate the elements as if they where 
+ * numbers.
+ * @param {comparer} comparer - A function used to make the comparations, this
+ * param not being present means the comparations will be made as if every value
+ * on the array where numbers.
+ * @returns {*} - The maximum value on the collection acording to the comparer.
+ * @throws {TypeError} - If spec is present and is not a function.
+ */
+Array.prototype.max = function(comparer) {
+    if ((comparer !== undefined) && ((typeof comparer) != 'function')) {
+        throw new TypeError(`Type error: ${comparer} is not a function.`);
+    }
+
+    let max = null;
+
+    if ((typeof comparer) == 'function') {
+        for (let i = 0; i < this.length; i++) {
+            if (i == 0) {
+                max = this[0];
+                continue;
+            }
+
+            max = (comparer.call(this, max, this[i])) < 0 ? this[i] : max;
+        }
+
+        return max;
+    }
+
+
+    for (let i = 0; i < this.length; i++) {
+        if (i == 0) {
+            max = this[0];
+            continue;
+        }
+
+        max = (max < this[i]) ? this[i] : max;
+    }
+
+    return max;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
  * @param {number} index - The index of the current value.
  * @returns {*} - The return value varies by usage.
  */
+
+ /**
+  * A function that returns negative when valueA < value B, zero when 
+  * valueA === valueB or positive when valueA > valueB.
+  * @callback comparer
+  * @param {*} valueA - The first value to compare.
+  * @param {*} valueB - The second value to compare.
+  * @returns {number} - Returns a number being negative when valueA is bigger,
+  * zero when both values are the same or positive when valueB is bigger.
+  */
