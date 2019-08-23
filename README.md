@@ -116,3 +116,12 @@ WIP
   - `property`- Name of the property that is going to be filling the array.
   
   **Returns** - An array with the values of the property, if a property is found as undefined then is not added to the array.
+  
+- `sum( spec )` returns the sum of the result of excecuting spec, if spec is not present, it will return the summatory of the array.
+  - `spec` - A function to be executed for every value of the array, its return value added is what forms the result, it takes two params: 
+      - *value*: Is equal to the current value of the array.
+      - *index*: Is equal to the current index of the array. 
+  
+  **Retuns** - The result of adding all the values returned by spec or the sum of every value of the array if spec is not present or null if the array is empty.
+  
+  **Throws** `TypeError` If spec is present and is not a function.
