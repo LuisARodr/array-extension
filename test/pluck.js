@@ -66,7 +66,7 @@ describe('Array Extension', function() {
             .and.to.have.members(["Ramon", "Ramiro"]);
     });
 
-    it('should return an empty array when the objects on the array dont have the requested property', function() {
+    it(`should return an empty array when the objects on the array don't have the requested propert`, function() {
         const obj1 = {
             name: 'Juancho',
             age: 19,
