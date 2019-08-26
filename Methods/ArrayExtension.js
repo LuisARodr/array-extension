@@ -317,8 +317,8 @@ Array.prototype.sum = function(spec) {
  * if comparer is not present it will evaluate the elements as if they where 
  * numbers.
  * @param {comparer} comparer - A function used to make the comparations, this
- * param not being present means the comparations will be made as if every value
- * on the array where numbers.
+ * param not being present means the comparison will be made as if every value
+ * on the array were numbers.
  * @returns {*} - The maximum value on the collection acording to the comparer.
  * @throws {TypeError} - If spec is present and is not a function.
  */
