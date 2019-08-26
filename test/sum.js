@@ -22,7 +22,7 @@ describe('Array Extension', function() {
       expect(sumArray).to.be.a('number').that.equals(20);
     });
 
-    it("should concatenate strings when there are string on the array and there's no spec", function() {
+    it("should concatenate strings when there are strings on the array and there's no spec", function() {
         const array = [1, 2, '3', '4'];
 
         const sumArray = array.sum();
