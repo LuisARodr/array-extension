@@ -359,10 +359,10 @@ Array.prototype.max = function(comparer) {
  * Returns the minumum value on the collection or null if the array is empty,
  * if comparer is not present it will evaluate the elements as if they where 
  * numbers.
- * @param {comparer} comparer - A function used to make the comparations, this
- * param not being present means the comparations will be made as if every value
- * on the array where numbers.
- * @returns {*} - The minumum value on the collection acording to the comparer.
+ * @param {comparer} comparer - A function used to make the comparison, this
+ * param not being present means the comparisons will be made as if every value
+ * on the array were numbers.
+ * @returns {*} - The minumum value on the collection according to the comparer.
  * @throws {TypeError} - If spec is present and is not a function.
  */
 Array.prototype.min = function(comparer) {
