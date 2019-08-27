@@ -225,10 +225,10 @@ Array.prototype.count = function(spec) {
 }
 
 /**
- * Return the zero based position in the array of the element that satisfies
+ * Returns the zero based position in the array of the element that satisfies
  * spec.
  * @param {spec|*} spec - The value to be matched on every value of the array 
- * on search of it, if spec is a fuction then a value is found when the function
+ * on search of it, if spec is a function then a value is found when the function
  * is satisfied with that value, otherwise it will look for a value on the array
  * that is equal to spec.
  * @returns {number} - The index of the match with spec or -1 if there's no match.

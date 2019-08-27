@@ -38,7 +38,7 @@ describe('Array Extension', function() {
       expect(valueIndex).to.be.a('number').that.equal(3);
     });
 
-    it("returns -1 when there's no match for the with an obj spec", function() {
+    it("returns -1 when there's no match for spec with an obj spec", function() {
       const array = [1, 2, 3, 4];
 
       const valueIndex = array.index(5);
@@ -46,7 +46,7 @@ describe('Array Extension', function() {
       expect(valueIndex).to.be.a('number').that.equal(-1);
     });
 
-    it("returns -1 when there's no match for the with a function spec", function() {
+    it("returns -1 when there's no match for spec with a function spec", function() {
       const array = [1, 2, 3, 4];
 
       const valueIndex = array.index(value => value > 5);
