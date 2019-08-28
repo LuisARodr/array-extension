@@ -14,8 +14,8 @@ describe('Array Extension', function() {
       expect(flattenArray).to.be.an('array').of.length(5).to.have.ordered.members([1, 2, 3, 4, 5]);
     });
 
-    it('should return an [1, 2, 3, 4, 5] array when the array is [[[1]], [2, [3, 4 , [5]]]]', function() {
-        const array = [[[1]], [2, [3, 4 , [5]]]];
+    it('should return an [1, 2, 3, 4, 5] array when the array is [[[1]], [2, [3, 4, [5]]]]', function() {
+        const array = [[[1]], [2, [3, 4, [5]]]];
 
         const flattenArray = array.flatten();
 
