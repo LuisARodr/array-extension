@@ -197,7 +197,7 @@ Array.prototype.last = function(spec) {
 }
 
 /**
- * Returns the number of elements on the collection that satifies spec, if spec
+ * Returns the number of elements on the array that satifies spec, if spec
  * is not present then it returns the length.
  * @param {spec} spec - A function that evaluates every value of the array, if spec
  * returns true then the value is counted towards the total.
