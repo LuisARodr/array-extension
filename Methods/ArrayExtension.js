@@ -128,6 +128,23 @@ Array.prototype.take = function take(howMany, spec) {
 }
 
 /**
+ * Retuns a new array with the values of the array minus the first howMany values.
+ * @param {number} howMany - The number of values of the array to be skiped.
+ * @returns {*[]} - A new array with the values that didn't got skiped.
+ */
+Array.prototype.skip = function skip(howMany) {
+    howMany = isNaN(howMany) ? 0 : howMany;
+
+    const result = [];
+
+    for (let i = howMany; i < this.length; i++) {
+        result.push(this[i]);
+    }
+
+    return result;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
