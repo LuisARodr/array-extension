@@ -170,7 +170,7 @@ Array.prototype.first = function(spec) {
 }
 
 /**
- * Returns the last element on collection that satifies spec, if spec is not
+ * Returns the last element on the array that satifies spec, if spec is not
  * present then it returns the last value of the array. Returns a null value
  * if the collection is empty or there's no element to match.
  * @param {spec} spec - A function to evaluate every value of the array.
