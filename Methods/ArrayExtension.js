@@ -233,7 +233,7 @@ Array.prototype.count = function(spec) {
  * that is equal to spec.
  * @returns {number} - The index of the match with spec or -1 if there's no match.
  */
-Array.prototype.index = function(spec) {
+Array.prototype.index = function index(spec) {
     if ((typeof spec) == 'function') {
         for (let i = 0; i < this.length; i++) {
             if (spec.call(this, this[i] , i)) {
