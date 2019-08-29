@@ -132,7 +132,7 @@ Array.prototype.take = function take(howMany, spec) {
  * @param {number} howMany - The number of values of the array to be skiped.
  * @returns {*[]} - A new array with the values that didn't got skiped.
  */
-Array.prototype.skip = function(howMany) {
+Array.prototype.skip = function skip(howMany) {
     howMany = isNaN(howMany) ? 0 : howMany;
 
     const result = [];
