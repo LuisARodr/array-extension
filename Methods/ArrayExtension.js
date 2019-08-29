@@ -68,12 +68,32 @@ Array.prototype.any = function any(spec) {
     return false;
 }
 
+/**
+ * Returns a new array with the values returned by the spec function for
+ * each value of the array.
+ * @param {spec} spec - This function is called for every value of the array,
+ * the return value is added to the new array.
+ * @returns {*[]} - A new array with the values returned by spec.
+ * @throws {TypeError} - If spec is no a function.
+ */
+Array.prototype.select = function select(spec) {
+    if ((typeof spec) != 'function') {
+        throw new TypeError(`Type error: ${spec} is not a function.`);
+    }
 
+    const result = []; 
+
+    this.each(function evaluate(value, index) {
+        result.push(spec.call(this, value, index));
+    });
+
+    return result;
+}
 
 /**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
  * @param {number} index - The index of the current value.
- * @returns {boolean} - true is the condition is correct, false otherwise.
+ * @returns {*} - The return value varies by usage.
  */
