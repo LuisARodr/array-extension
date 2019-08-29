@@ -261,7 +261,7 @@ Array.prototype.index = function(spec) {
  * @returns {*[]} - An array with the values of the property, if a property is
  * found as undefined then is not added to the array.
  */
-Array.prototype.pluck = function(property) {
+Array.prototype.pluck = function pluck(property) {
     const result = [];
 
     for (let i = 0; i < this.length; i++) {
