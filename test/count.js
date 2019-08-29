@@ -1,7 +1,7 @@
 'use strict'
 
 var expect = require('chai').expect;
-var ArrayExtension = require('../Methods/ArrayExtension');
+var ArrayExtension = require('../');
 
 
 describe('Array Extension', function() {
