@@ -274,6 +274,45 @@ Array.prototype.pluck = function pluck(property) {
 }
 
 /**
+ * Returns the sum of the result of excecuting spec, if spec is not present,
+ * it will return the summatory of the array.
+ * @param {spec} spec - A function to be executed for every value of the array,
+ * its return value added is what forms the result.
+ * @returns {number|string} - The result of adding all the values returned by 
+ * spec or null if the array is empty
+ * @throws {TypeError} - If spec is not a function.
+ */
+Array.prototype.sum = function sum(spec) {
+    if ((spec !== undefined) && ((typeof spec) != 'function')) {
+        throw new TypeError(`Type error: ${spec} is not a function.`);
+    }
+
+    let sum = null;
+
+    if ((typeof spec) == 'function') {
+        for (let i = 0; i < this.length; i++) {
+            if (i == 0) {
+                sum = spec.call(this, this[i], i);
+                continue;
+            }
+            sum += spec.call(this, this[i], i);
+        }
+    
+        return sum;
+    }
+    
+    for (let i = 0; i < this.length; i++) {
+        if (i == 0) {
+            sum = this[i];
+            continue;
+        }
+        sum += this[i];
+    }
+
+    return sum;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
