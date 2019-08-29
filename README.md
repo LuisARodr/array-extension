@@ -4,7 +4,7 @@ Array Extension is a library that extends the functionality of the Arrays on Jav
 
 ## Instalation
 
-`npm i lr-array-extension`
+`npm i lr-array-extension -S`
 
 ## Usage
 
