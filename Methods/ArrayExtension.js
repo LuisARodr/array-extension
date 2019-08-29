@@ -170,6 +170,33 @@ Array.prototype.first = function first(spec) {
 }
 
 /**
+ * Returns the last element on the array that satifies spec, if spec is not
+ * present then it returns the last value of the array. Returns a null value
+ * if the collection is empty or there's no element to match.
+ * @param {spec} spec - A function to evaluate every value of the array.
+ * @returns {*} The last element to satisfy spec or null if there's no match.
+ * @throws {TypeError} - If spec is no a function.
+ */
+Array.prototype.last = function last(spec) {
+    if (spec === undefined) {
+        return this[this.length - 1];
+    }
+    if ((typeof spec) != 'function') {
+        throw new TypeError(`Type error: ${spec} is not a function.`);
+    }
+    
+    let lastValue = null;
+
+    for (let i = 0; i < this.length; i++) {
+        if (spec.call(this, this[i], i)) {
+            lastValue = this[i];
+        }
+    }
+    
+    return lastValue;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
