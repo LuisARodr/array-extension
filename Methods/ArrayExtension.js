@@ -145,7 +145,7 @@ Array.prototype.skip = function(howMany) {
 }
 
 /**
- * Returns the first element on collection that satifies spec, if spec is not
+ * Returns the first element on the array that satifies spec, if spec is not
  * present then it returns the first value of the array. Returns a null value
  * if the collection is empty or there's no element to match.
  * @param {spec} spec - A function to evaluate every value of the array.
