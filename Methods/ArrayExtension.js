@@ -177,7 +177,7 @@ Array.prototype.first = function(spec) {
  * @returns {*} The last element to satisfy spec or null if there's no match.
  * @throws {TypeError} - If spec is no a function.
  */
-Array.prototype.last = function(spec) {
+Array.prototype.last = function last(spec) {
     if (spec === undefined) {
         return this[this.length - 1];
     }
