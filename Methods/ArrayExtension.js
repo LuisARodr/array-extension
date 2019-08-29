@@ -152,7 +152,7 @@ Array.prototype.skip = function(howMany) {
  * @returns {*} The first element to satisfy spec or null if there's no match.
  * @throws {TypeError} - If spec is no a function.
  */
-Array.prototype.first = function(spec) {
+Array.prototype.first = function first(spec) {
     if (spec === undefined) {
         return this[0];
     }
