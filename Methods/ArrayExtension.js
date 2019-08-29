@@ -197,6 +197,34 @@ Array.prototype.last = function last(spec) {
 }
 
 /**
+ * Returns the number of elements on the array that satifies spec, if spec
+ * is not present then it returns the length.
+ * @param {spec} spec - A function that evaluates every value of the array, if spec
+ * returns true then the value is counted towards the total.
+ * @returns {number} - The count of values that satisfied the spec function 
+ * or the length of the array if spec is not present.
+ * @throws {TypeError} - If spec is no a function.
+ */
+Array.prototype.count = function count(spec) {
+    if (spec === undefined) {
+        return this.length;
+    }
+    if ((typeof spec) != 'function') {
+        throw new TypeError(`Type error: ${spec} is not a function.`);
+    }
+
+    let count = 0;
+
+    for (let i = 0; i < this.length; i++) {
+        if (spec.call(this, this[i], i)) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
