@@ -205,7 +205,7 @@ Array.prototype.last = function(spec) {
  * or the length of the array if spec is not present.
  * @throws {TypeError} - If spec is no a function.
  */
-Array.prototype.count = function(spec) {
+Array.prototype.count = function count(spec) {
     if (spec === undefined) {
         return this.length;
     }
