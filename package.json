@@ -9,8 +9,8 @@
   },
   "name": "lr-array-extension",
   "description": "Array Extension is a library that extends the functionality of the Arrays on Javascript.",
-  "version": "1.0.0",
-  "main": "Methods/ArrayExtension.js",
+  "version": "1.0.2",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
