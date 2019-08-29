@@ -1,0 +1,32 @@
+{
+  "scripts": {
+    "test": "mocha",
+    "prepublish": "npm test"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  },
+  "name": "lr-array-extension",
+  "description": "Array Extension is a library that extends the functionality of the Arrays on Javascript.",
+  "version": "1.0.0",
+  "main": "Methods/ArrayExtension.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisARodr/array-extension.git"
+  },
+  "keywords": [
+    "array",
+    "prototype"
+  ],
+  "author": "Luis Rodriguez <lrodriguez@nearsoft.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisARodr/array-extension/issues"
+  },
+  "homepage": "https://github.com/LuisARodr/array-extension#readme"
+}
