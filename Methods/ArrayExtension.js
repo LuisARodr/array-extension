@@ -254,6 +254,26 @@ Array.prototype.index = function index(spec) {
 }
 
 /**
+ * Returns a new array with the values of the property for each value of the 
+ * array.
+ * @param {string|symbol} property -  name of the property that is going to be filling 
+ * the array.
+ * @returns {*[]} - An array with the values of the property, if a property is
+ * found as undefined then is not added to the array.
+ */
+Array.prototype.pluck = function pluck(property) {
+    const result = [];
+
+    for (let i = 0; i < this.length; i++) {
+        if (this[i][property] !== undefined) {
+            result.push(this[i][property]);
+        }
+    }
+
+    return result;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
