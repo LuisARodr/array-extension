@@ -322,7 +322,7 @@ Array.prototype.sum = function(spec) {
  * @returns {*} - The maximum value on the collection acording to the comparer.
  * @throws {TypeError} - If spec is present and is not a function.
  */
-Array.prototype.max = function(comparer) {
+Array.prototype.max = function max(comparer) {
     if ((comparer !== undefined) && ((typeof comparer) != 'function')) {
         throw new TypeError(`Type error: ${comparer} is not a function.`);
     }
@@ -341,7 +341,6 @@ Array.prototype.max = function(comparer) {
 
         return max;
     }
-
 
     for (let i = 0; i < this.length; i++) {
         if (i == 0) {
