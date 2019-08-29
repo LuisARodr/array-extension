@@ -365,7 +365,7 @@ Array.prototype.max = function(comparer) {
  * @returns {*} - The minumum value on the collection according to the comparer.
  * @throws {TypeError} - If spec is present and is not a function.
  */
-Array.prototype.min = function(comparer) {
+Array.prototype.min = function min(comparer) {
     if ((comparer !== undefined) && ((typeof comparer) != 'function')) {
         throw new TypeError(`Type error: ${comparer} is not a function.`);
     }
@@ -384,7 +384,6 @@ Array.prototype.min = function(comparer) {
 
         return min;
     }
-
 
     for (let i = 0; i < this.length; i++) {
         if (i == 0) {
