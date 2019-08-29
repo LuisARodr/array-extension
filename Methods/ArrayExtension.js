@@ -355,6 +355,48 @@ Array.prototype.max = function max(comparer) {
 }
 
 /**
+ * Returns the minumum value on the collection or null if the array is empty,
+ * if comparer is not present it will evaluate the elements as if they where 
+ * numbers.
+ * @param {comparer} comparer - A function used to make the comparison, this
+ * param not being present means the comparisons will be made as if every value
+ * on the array were numbers.
+ * @returns {*} - The minumum value on the collection according to the comparer.
+ * @throws {TypeError} - If spec is present and is not a function.
+ */
+Array.prototype.min = function min(comparer) {
+    if ((comparer !== undefined) && ((typeof comparer) != 'function')) {
+        throw new TypeError(`Type error: ${comparer} is not a function.`);
+    }
+
+    let min = null;
+
+    if ((typeof comparer) == 'function') {
+        for (let i = 0; i < this.length; i++) {
+            if (i == 0) {
+                min = this[0];
+                continue;
+            }
+
+            min = (comparer.call(this, min, this[i])) > 0 ? this[i] : min;
+        }
+
+        return min;
+    }
+
+    for (let i = 0; i < this.length; i++) {
+        if (i == 0) {
+            min = this[0];
+            continue;
+        }
+
+        min = (min > this[i]) ? this[i] : min;
+    }
+
+    return min;
+}
+
+/**
  * A callback to evaluate every value of the array
  * @callback spec
  * @param {*} value - The current value of the array. 
