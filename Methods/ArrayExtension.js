@@ -282,7 +282,7 @@ Array.prototype.pluck = function(property) {
  * spec or null if the array is empty
  * @throws {TypeError} - If spec is not a function.
  */
-Array.prototype.sum = function(spec) {
+Array.prototype.sum = function sum(spec) {
     if ((spec !== undefined) && ((typeof spec) != 'function')) {
         throw new TypeError(`Type error: ${spec} is not a function.`);
     }
