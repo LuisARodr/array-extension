@@ -8,7 +8,22 @@ Array Extension is a library that extends the functionality of the Arrays on Jav
 
 ## Usage
 
-WIP
+To use this library all you need to do is to import the library
+
+```javascript
+require('lr-array-extension');
+```
+
+at this moment the prototype of every array is changed and can make use of the methods.
+
+Example of usage:
+```javascript
+require('lr-array-extension');
+
+const array = [1 ,2 ,3, 4, 5];
+
+console.log(array.max()); // This prints 5 as is the max value of the array
+```
 
 ## Methods
 
